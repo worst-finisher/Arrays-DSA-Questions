@@ -1,0 +1,34 @@
+//: The Program Of Maximum Sub-Array Sum :
+
+import java.util.*;
+public class Main 
+{
+    public static void Maxsum(int a[])
+    {
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i;j<a.length;j++)
+            {
+                int sum=0;
+                for(int k=i;k<=j;k++)
+                {
+                    sum=sum+a[k];
+                }
+                System.out.println("The Given Pair Sum = "+sum);
+                if(max<sum)
+                {
+                    max=sum;
+                }
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println("And Overall The Maximum Sum = "+max);
+    }
+    public static void main(String arg[])
+    {
+        int a[] = {2,4,6,8,10};
+        Maxsum(a);
+    }
+}

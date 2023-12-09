@@ -1,0 +1,40 @@
+//: The Program Of Sub-Array :
+
+import java.util.*;
+public class Main 
+{
+    public static void pair(int a[])
+    {
+        int i,j,k;
+        for(i=0;i<a.length;i++)
+        {
+            for(j=i+1;j<a.length;j++)
+            {
+                System.out.print("[");
+                for(k=i;k<=j;k++)
+                {
+                    System.out.print(a[k]+" ");
+                }
+                System.out.print("]");
+                System.out.println();
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String arg[])
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter The Array Size : ");
+        int n = sc.nextInt();
+        System.out.print("Enter The Elments Of The Array : ");
+        int a[]=new int[n];
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        System.out.println();
+        System.out.println("The Output Is : ");
+        System.out.println();
+        pair(a);
+    }
+}

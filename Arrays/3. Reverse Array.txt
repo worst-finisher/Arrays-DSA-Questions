@@ -1,0 +1,30 @@
+//: The Program Of Reversing A Array :
+
+import java.util.*;
+public class Main 
+{
+    public static void Reverse(int a[])
+    {
+        int start =0;
+        int end =a.length-1;
+        while(start<end)
+        {
+            int temp = a[start];
+            a[start] = a[end];
+            a[end] = temp;
+            
+            start++;
+            end--;
+        }
+    }
+    public static void main(String arg[])
+    {
+        int a[] = {5,4,3,2,1};
+        Reverse(a);
+        System.out.print("The Resverse Of This Array = ");
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+    }
+}
