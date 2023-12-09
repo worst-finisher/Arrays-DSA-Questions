@@ -1,0 +1,61 @@
+//Alternate +ve & -ve Number Sequencing :
+
+import java.util.*;
+public class Main 
+{
+    public static void Array(int a[])
+    {
+        ArrayList<Integer>list1 = new ArrayList<>();
+        ArrayList<Integer>list2 = new ArrayList<>();
+        int i,n=a.length;
+        for(i=0;i<n;i++)
+        {
+            if(a[i]>=0)
+            {
+                list1.add(a[i]);
+            }
+            else 
+            {
+                list2.add(a[i]);
+            }
+        }
+        int k1=0;
+        int k2=0;
+        for(i=0;i<n && k1<list1.size() && k2<list2.size();i+=2)
+        {
+            a[i]=list1.get(k1++);
+            a[i+1]=list2.get(k2++);
+        }
+        while(i<n && k1<list1.size())
+        {
+            a[i]=list1.get(k1);
+            k1++;
+            i++;
+        }
+        while(i<n && k2<list2.size())
+        {
+            a[i]=list2.get(k2);
+            k2++;
+            i++;
+        }
+    }
+    public static void main(String arg[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter The Size Of an Array : ");
+        int n = sc.nextInt();
+        System.out.print("Enter The "+n+" Elements Of The Array : ");
+        int a[]=new int[n];
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        System.out.println();
+        System.out.print("The Alternate Positive & Negative Number Sequence = ");
+        Array(a);
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(+a[i]+" ");
+        }
+    }
+}
