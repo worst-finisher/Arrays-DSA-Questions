@@ -1,0 +1,49 @@
+import java.util.*;
+public class Main 
+{
+    public static boolean findvalue(int matrix[][],int key)
+    {
+        int row=0,col=matrix[0].length-1,sum=0;
+        while(row<matrix.length && col>=0)
+        {
+            if(matrix[row][col]==key)
+            {
+                System.out.println("The Key At Index : ("+row+","+col+")");
+                return true;
+            }
+            else if(key<matrix[row][col])
+            {
+                col--;
+            }
+            else 
+            {
+                row++;
+            }
+        }
+        System.out.print("Key Not Found");
+        return false;
+    }
+    public static void main(String arg[])
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter The Row Size : ");
+        int n= sc.nextInt();
+        System.out.print("Enter The Column Size : ");
+        int m= sc.nextInt();
+        System.out.println();
+        System.out.print("Enter The Matrix Elements : ");
+        int matrix[][]=new int[n][m];
+        int i,j;
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                matrix[i][j]=sc.nextInt();
+            }
+        }
+        System.out.print("Enter The Key Which Have To be Find : ");
+        int key = sc.nextInt();
+        System.out.println();
+        findvalue(matrix,key);
+    }
+}

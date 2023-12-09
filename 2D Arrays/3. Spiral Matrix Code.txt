@@ -1,0 +1,92 @@
+import java.util.*;
+public class Main 
+{
+    public static void SpiralMatrix(int matrix[][])
+    {
+        int i,j;
+        int Srow= 0;
+        int Scol= 0;
+        int Erow= matrix.length-1;     // n-1 = Erow(Ending row)... Here 'n' Used For Rows.
+        int Ecol= matrix[0].length-1; // m-1 = Ecol(Ending column)... Here 'm' Used For Columns.
+        
+        while(Srow<=Erow && Scol<=Ecol)
+        {
+            // for upper side
+        
+            for(j=Scol;j<=Ecol;j++)
+            {
+                System.out.print(matrix[Srow][j]+" ");
+            }
+            
+            //for right side
+            
+            for(i=Srow+1;i<=Erow;i++)
+            {
+                System.out.print(matrix[i][Ecol]+" ");
+            }
+            
+            //for bottom side
+            
+            for(j=Ecol-1;j>=Scol;j--)
+            {
+                if(Srow==Erow)
+                {
+                    break;
+                }
+                System.out.print(matrix[Erow][j]+" ");
+            }
+            
+            //for left side
+            
+            for(i=Erow-1;i>=Srow+1;i--)
+            {
+                if(Scol==Ecol)
+                {
+                    break;
+                }
+                System.out.print(matrix[i][Scol]+" ");
+            }
+            
+            //iteratiom used to continue the code till end.
+            
+            Scol++;
+            Srow++;
+            Ecol--;
+            Erow--;
+            
+        }
+        System.out.println();
+    }
+    public static void main(String arg[])
+    {
+        
+        //Scanner class Used to take input for matrix as per our choice.
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter The Row Size : ");
+        int n=sc.nextInt();
+        System.out.print("Enter The column Size : ");
+        int m=sc.nextInt();
+        int matrix[][]=new int[n][m];
+        n=matrix.length;
+        m=matrix[0].length;
+        
+        int i,j;
+        System.out.print("Enter The ["+n+"]"+"["+m+"]"+" Matrix Elements : ");
+        
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                
+                matrix[i][j]=sc.nextInt();
+            }
+        }
+        
+        // Final Output.
+        
+        System.out.println();
+        System.out.print("The Spiral Matrix Of Given Matrix : ");
+        SpiralMatrix(matrix);
+    }
+}
