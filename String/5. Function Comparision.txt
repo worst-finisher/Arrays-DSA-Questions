@@ -1,0 +1,46 @@
+import java.util.*;
+public class Main 
+{
+    public static void main(String arg[])
+    {
+        String str="Tony";
+        String str1="Tony";
+        String str2=new String("Tony");
+        
+        // From '==' We Can't Identify Correctly Like This :
+        // if(str==str1)
+        // {
+        //     System.out.println("first case :- yes");
+        // }
+        // else{
+        //     System.out.println("first case :- no");
+        // }
+        // if(str==str2)
+        // {
+        //     System.out.println("Second case :- yes");
+        // }
+        // else 
+        // {
+        //     System.out.print("Second case :- no");
+        // }
+        
+        //So The Above Part Is For Better Understanding Now We Use '.equals' :
+        
+        if(str.equals(str1))
+        {
+            System.out.println("first case :- yes");
+        }
+        else{
+            System.out.println("first case :- no");
+        }
+        if(str.equals(str2))
+        {
+            System.out.println("Second case :- yes");
+        }
+        else 
+        {
+            System.out.print("Second case :- no");
+        }
+        
+    }
+}

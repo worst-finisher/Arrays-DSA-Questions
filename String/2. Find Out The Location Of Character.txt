@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String arg[])
+    {
+        String first= "RITIK";
+        System.out.println("First Name = "+first);
+        String second= "GUPTA";
+        System.out.println("Last Name = "+second);
+        String fullname = first+" "+second;
+        System.out.println("Full Name = "+fullname);
+        
+        // Find Out The Value At Any Index
+        // So here we use .charAt(index-value)
+        
+        System.out.println();
+        System.out.println("--> For Finding The Address Of Character <--");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter The Index Value : ");
+        int n = sc.nextInt();
+        System.out.print(fullname.charAt(n));
+    }
+}

@@ -1,0 +1,55 @@
+import java.util.*;
+public class Main 
+{
+    public static String SubString(String str,int si,int ei)
+    {
+        String SubStr = "";
+        for(int i=si;i<ei;i++)
+        {
+            SubStr += str.charAt(i);
+        }
+        return SubStr;
+    }
+    public static void main(String arg[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter The String Characters = ");
+        String str = sc.nextLine();
+        System.out.print("Enter The Starting Index = ");
+        int sp = sc.nextInt();
+        System.out.print("Enter The Ending Index = ");
+        int ep = sc.nextInt();
+        System.out.println();
+        System.out.print("The Sub-String Is = ");
+        System.out.print(SubString(str,sp,ep));
+    }
+}
+
+
+----------------------------------------------------------------------OR---------------------------------------------------------------------------
+
+// Easy Method For PickOut Sub-String Is Given Below :-
+
+
+import java.util.*;
+public class Main 
+{
+    public static String SubString(String str,int si,int ei)
+    {
+        String SubStr=str.substring(si,ei);
+        return SubStr;
+    }
+    public static void main(String arg[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter The String Characters = ");
+        String str = sc.nextLine();
+        System.out.print("Enter The Starting Index = ");
+        int sp = sc.nextInt();
+        System.out.print("Enter The Ending Index = ");
+        int ep = sc.nextInt();
+        System.out.println();
+        System.out.print("The Sub-String Is = ");
+        System.out.print(SubString(str,sp,ep));
+    }
+}

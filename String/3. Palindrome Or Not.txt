@@ -1,0 +1,57 @@
+import java.util.*;
+public class Main 
+{
+    public static boolean search(String a)
+    {
+        int i,n=a.length(),m=a.length()-1;
+        for(i=0;i<n/2;i++)
+        {
+            
+            if(a.charAt(i)!=a.charAt(m-i))
+            {
+                System.out.print("It's not a Palindrome & hence it's ");
+                return false;
+            }
+        }
+        System.out.print("It's a Palindrome & hence it's ");
+        return true;
+    }
+    public static void main(String arg[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter The Value For Examine : ");
+        String a = sc.nextLine();
+        System.out.println();
+        System.out.print(search(a));
+    }
+}
+
+SECOND METHOD :--------------------------------------------------------------------
+
+
+import java.util.*;
+public class Main 
+{
+    public static boolean ret(String str)
+    {
+        String st = str;
+        String finall="";
+        for(int i=str.length()-1;i>=0;i--)
+        {
+            finall += str.charAt(i);
+        }
+        if(finall.equals(st))
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+    public static void main(String arg[])
+    {
+        String str = "ABCDCBA";
+        System.out.print(ret(str));
+    }
+}

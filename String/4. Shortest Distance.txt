@@ -1,0 +1,39 @@
+import java.util.*;
+public class Main 
+{
+    public static float palindrome(String str)
+    {
+        int i,x=0,y=0,n=str.length();
+        for(i=0;i<n;i++)
+        {
+            char word = str.charAt(i);
+            if(word=='E')
+            {
+                x++;
+            }
+            else if(word=='W')
+            {
+                x--;
+            }
+            else if(word=='N')
+            {
+                y++;
+            }
+            else if(word=='S')
+            {
+                y--;
+            }
+        }
+        int x2mx1 = x*x; // here x1=0;
+        int y2my1 = y*y; // here y1=0;
+        return (float)Math.sqrt((x2mx1)+(y2my1));
+    }
+    public static void main(String arg[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter The Character : ");
+        String str = sc.nextLine();
+        System.out.print("The Sortest Path Will Be = ");
+        System.out.print(palindrome(str));
+    }
+}

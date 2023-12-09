@@ -1,0 +1,13 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String arg[])
+    {
+        String first= "RITIK";
+        System.out.println("First Name = "+first);
+        String second= "GUPTA";
+        System.out.println("Last Name = "+second);
+        String fullname = first+" "+second;
+        System.out.println("Full Name = "+fullname);
+    }
+}
